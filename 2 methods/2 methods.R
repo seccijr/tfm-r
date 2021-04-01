@@ -15,7 +15,7 @@ source("../cruzada xgboost binaria.R")
 source("../cruzada arbolbin.R")
 
 news_reduced_clean_two_methods <-
-  read.sas7bdat("C:\\Users\\secci\\Workspace\\TFM\\Lib\\news_reduced_clean_two_methods.sas7bdat")
+  read.sas7bdat("../../Lib/news_reduced_clean_two_methods.sas7bdat")
 
 news_reduced_clean_two_methods$REP_clicked <- factor(news_reduced_clean_two_methods$REP_clicked, levels = c(0, 1), labels = c("No", "Yes"))
 
@@ -137,78 +137,6 @@ logistic <- cruzadalogistica(
 )
 
 logistic$modelo = "ll-v2"
-
-# SVM
-
-svmrbf <- cruzadaSVMbinRBF(
-  data = news_reduced_clean_two_methods,
-  vardep = vardep,
-  listclass = categoricas,
-  grupos = 4,
-  sinicio = 12345,
-  repe = 10,
-  C = 100,
-  sigma = 100
-)
-
-svmrbf$modelo = "svm-rbf-v2"
-
-svmpolr2 <- cruzadaSVMbinPoly(
-  data = news_reduced_clean_two_methods,
-  vardep = vardep,
-  listclass = categoricas,
-  grupos = 4,
-  sinicio = 1234,
-  repe = 10,
-  C = 10,
-  degree = 2,
-  scale = 1
-)
-
-svmpolr2$modelo = "svm-pol-r2-v2"
-
-svmpolr3 <- cruzadaSVMbinPoly(
-  data = news_reduced_clean_two_methods,
-  vardep = vardep,
-  listclass = categoricas,
-  grupos = 4,
-  sinicio = 1234,
-  repe = 10,
-  C = 10,
-  degree = 3,
-  scale = 1
-)
-
-svmpolr3$modelo = "svm-pol-r3-v2"
-
-svmpolr3c100 <- cruzadaSVMbinPoly(
-  data = news_reduced_clean_two_methods,
-  vardep = vardep,
-  listclass = categoricas,
-  grupos = 4,
-  sinicio = 1234,
-  repe = 10,
-  C = 100,
-  degree = 3,
-  scale = 1
-)
-
-svmpolr3c100$modelo = "svm-pol-r3-c100-v2"
-
-svmpolr4 <- cruzadaSVMbinPoly(
-  data = news_reduced_clean_two_methods,
-  vardep = vardep,
-  listclass = categoricas,
-  grupos = 4,
-  sinicio = 1234,
-  repe = 10,
-  C = 10,
-  degree = 4,
-  scale = 1
-)
-
-svmpolr4$modelo = "svm-pol-r4-v2"
-
 
 # avNNet 
 

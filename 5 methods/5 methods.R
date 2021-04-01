@@ -14,36 +14,26 @@ source("../cruzada rf binaria.R")
 source("../cruzada xgboost binaria.R")
 source("../cruzada arbolbin.R")
 
-news_reduced_clean_four_methods <-
-  read.sas7bdat("../../Lib/news_reduced_clean_four_methods.sas7bdat")
+news_reduced_clean_five_methods <-
+  read.sas7bdat("C:\\Users\\secci\\Workspace\\TFM\\Lib\\news_reduced_clean_five_methods.sas7bdat")
 
-news_reduced_clean_four_methods$REP_clicked <- factor(news_reduced_clean_four_methods$REP_clicked, levels = c(0, 1), labels = c("No", "Yes"))
+news_reduced_clean_five_methods$REP_clicked <- factor(news_reduced_clean_five_methods$REP_clicked, levels = c(0, 1), labels = c("No", "Yes"))
 
-news_reduced_clean_four_methods$REP_P1343_tail <- factor(news_reduced_clean_four_methods$REP_P1343_tail)
-news_reduced_clean_four_methods$REP_P17_tail <- factor(news_reduced_clean_four_methods$REP_P17_tail)
-news_reduced_clean_four_methods$REP_P27_tail <- factor(news_reduced_clean_four_methods$REP_P27_tail)
-news_reduced_clean_four_methods$REP_P31_head <- factor(news_reduced_clean_four_methods$REP_P31_head)
-news_reduced_clean_four_methods$REP_P31_tail <- factor(news_reduced_clean_four_methods$REP_P31_tail)
-news_reduced_clean_four_methods$REP_P361_tail <- factor(news_reduced_clean_four_methods$REP_P361_tail)
-news_reduced_clean_four_methods$REP_category <- factor(news_reduced_clean_four_methods$REP_category)
-news_reduced_clean_four_methods$REP_subcategory <- factor(news_reduced_clean_four_methods$REP_subcategory)
+news_reduced_clean_five_methods$REP_P31_head <- factor(news_reduced_clean_five_methods$REP_P31_head)
+news_reduced_clean_five_methods$REP_P31_tail <- factor(news_reduced_clean_five_methods$REP_P31_tail)
+news_reduced_clean_five_methods$REP_subcategory <- factor(news_reduced_clean_five_methods$REP_subcategory)
 
 vardep <- c("REP_clicked")
 categoricas <- c(
-  "REP_P1343_tail",
-  "REP_P17_tail",
-  "REP_P27_tail",
   "REP_P31_head",
   "REP_P31_tail",
-  "REP_P361_tail",
-  "REP_category",
   "REP_subcategory"
 )
 
 # Logistic
 
 logistic <- cruzadalogistica(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -51,12 +41,12 @@ logistic <- cruzadalogistica(
   repe = 10
 )
 
-logistic$modelo = "ll-v4"
+logistic$modelo = "ll-v5"
 
 # avNNet 
 
 avnnetn2c01 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -68,10 +58,10 @@ avnnetn2c01 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn2c01$modelo = "avnnet-n2-c0.1-v4"
+avnnetn2c01$modelo = "avnnet-n2-c0.1-v5"
 
 avnnetn2c001 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -83,10 +73,10 @@ avnnetn2c001 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn2c001$modelo = "avnnet-n2-c0.01-v4"
+avnnetn2c001$modelo = "avnnet-n2-c0.01-v5"
 
 avnnetn3c01 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -98,10 +88,10 @@ avnnetn3c01 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn3c01$modelo = "avnnet-n3-c0.1-v4"
+avnnetn3c01$modelo = "avnnet-n3-c0.1-v5"
 
 avnnetn3c001 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -113,10 +103,10 @@ avnnetn3c001 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn3c001$modelo = "avnnet-n3-c0.01-v4"
+avnnetn3c001$modelo = "avnnet-n3-c0.01-v5"
 
 avnnetn4c01 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -128,10 +118,10 @@ avnnetn4c01 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn4c01$modelo = "avnnet-n4-c0.1-v4"
+avnnetn4c01$modelo = "avnnet-n4-c0.1-v5"
 
 avnnetn4c001 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -143,10 +133,10 @@ avnnetn4c001 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn4c001$modelo = "avnnet-n4-c0.01-v4"
+avnnetn4c001$modelo = "avnnet-n4-c0.01-v5"
 
 avnnetn5c01 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -158,10 +148,10 @@ avnnetn5c01 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn5c01$modelo = "avnnet-n5-c0.1-v4"
+avnnetn5c01$modelo = "avnnet-n5-c0.1-v5"
 
 avnnetn5c001 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -173,10 +163,10 @@ avnnetn5c001 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn5c001$modelo = "avnnet-n5-c0.01-v4"
+avnnetn5c001$modelo = "avnnet-n5-c0.01-v5"
 
 avnnetn6c01 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -188,10 +178,10 @@ avnnetn6c01 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn6c01$modelo = "avnnet-n6-c0.1-v4"
+avnnetn6c01$modelo = "avnnet-n6-c0.1-v5"
 
 avnnetn6c001 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -203,10 +193,10 @@ avnnetn6c001 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn6c001$modelo = "avnnet-n6-c0.01-v4"
+avnnetn6c001$modelo = "avnnet-n6-c0.01-v5"
 
 avnnetn7c01 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -218,10 +208,10 @@ avnnetn7c01 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn7c01$modelo = "avnnet-n7-c0.1-v4"
+avnnetn7c01$modelo = "avnnet-n7-c0.1-v5"
 
 avnnetn7c001 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -233,10 +223,10 @@ avnnetn7c001 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn7c001$modelo = "avnnet-n7-c0.01-v4"
+avnnetn7c001$modelo = "avnnet-n7-c0.01-v5"
 
 avnnetn8c01 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -248,10 +238,10 @@ avnnetn8c01 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn8c01$modelo = "avnnet-n8-c0.1-v4"
+avnnetn8c01$modelo = "avnnet-n8-c0.1-v5"
 
 avnnetn8c001 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -263,10 +253,10 @@ avnnetn8c001 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn8c001$modelo = "avnnet-n8-c0.01-v4"
+avnnetn8c001$modelo = "avnnet-n8-c0.01-v5"
 
 avnnetn9c01 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -278,10 +268,10 @@ avnnetn9c01 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn9c01$modelo = "avnnet-n9-c0.1-v4"
+avnnetn9c01$modelo = "avnnet-n9-c0.1-v5"
 
 avnnetn9c001 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -293,10 +283,10 @@ avnnetn9c001 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn9c001$modelo = "avnnet-n9-c0.01-v4"
+avnnetn9c001$modelo = "avnnet-n9-c0.01-v5"
 
 avnnetn10c01 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -308,10 +298,10 @@ avnnetn10c01 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn10c01$modelo = "avnnet-n10-c0.1-v4"
+avnnetn10c01$modelo = "avnnet-n10-c0.1-v5"
 
 avnnetn10c001 <- cruzadaavnnetbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -323,10 +313,10 @@ avnnetn10c001 <- cruzadaavnnetbin(
   itera = 200
 )
 
-avnnetn10c001$modelo = "avnnet-n10-c0.01-v4"
+avnnetn10c001$modelo = "avnnet-n10-c0.01-v5"
 
 arbol <- cruzadaarbolbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -336,10 +326,10 @@ arbol <- cruzadaarbolbin(
   minbucket = 5
 )
 
-arbol$modelo = "arbol-v4"
+arbol$modelo = "arbol-v5"
 
 bagging <- cruzadarfbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -351,10 +341,10 @@ bagging <- cruzadarfbin(
   replace = TRUE
 )
 
-bagging$modelo = "bagging-v4"
+bagging$modelo = "bagging-v5"
 
 randomforest <- cruzadarfbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -366,10 +356,10 @@ randomforest <- cruzadarfbin(
   replace = TRUE
 )
 
-randomforest$modelo = "rf-v4"
+randomforest$modelo = "rf-v5"
 
 randomforestm2 <- cruzadarfbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -381,10 +371,10 @@ randomforestm2 <- cruzadarfbin(
   replace = TRUE
 )
 
-randomforestm2$modelo = "rf-m2-v4"
+randomforestm2$modelo = "rf-m2-v5"
 
 gradientboosting <- cruzadagbmbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -396,11 +386,11 @@ gradientboosting <- cruzadagbmbin(
   interaction.depth = 2
 )
 
-gradientboosting$modelo = "gbm-v4"
+gradientboosting$modelo = "gbm-v5"
 
 
 gradientboosting01d4 <- cruzadagbmbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -412,10 +402,10 @@ gradientboosting01d4 <- cruzadagbmbin(
   interaction.depth = 4
 )
 
-gradientboosting01d4$modelo = "gbm-01-d4-v4"
+gradientboosting01d4$modelo = "gbm-01-d4-v5"
 
 gradientboosting003d4 <- cruzadagbmbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -427,10 +417,10 @@ gradientboosting003d4 <- cruzadagbmbin(
   interaction.depth = 4
 )
 
-gradientboosting003d4$modelo = "gbm-003-d4-v4"
+gradientboosting003d4$modelo = "gbm-003-d4-v5"
 
 xgboost <- cruzadaxgbmbin(
-  data = news_reduced_clean_four_methods,
+  data = news_reduced_clean_five_methods,
   vardep = vardep,
   listclass = categoricas,
   grupos = 4,
@@ -448,7 +438,7 @@ xgboost <- cruzadaxgbmbin(
   lambda_bias = 0
 )
 
-xgboost$modelo = "xgbm-v4"
+xgboost$modelo = "xgbm-v5"
 
 union <-
   rbind(
