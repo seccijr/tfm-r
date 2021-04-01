@@ -42,6 +42,7 @@ logistic <- cruzadalogistica(
 )
 
 logistic$modelo = "ll-v5"
+save.image("ll-v5.RData")
 
 # avNNet 
 
@@ -59,6 +60,7 @@ avnnetn2c01 <- cruzadaavnnetbin(
 )
 
 avnnetn2c01$modelo = "avnnet-n2-c0.1-v5"
+save.image("avnnet-n2-c0.1-v5.RData")
 
 avnnetn2c001 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -74,6 +76,7 @@ avnnetn2c001 <- cruzadaavnnetbin(
 )
 
 avnnetn2c001$modelo = "avnnet-n2-c0.01-v5"
+save.image("avnnet-n2-c0.01-v5.RData")
 
 avnnetn3c01 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -89,6 +92,7 @@ avnnetn3c01 <- cruzadaavnnetbin(
 )
 
 avnnetn3c01$modelo = "avnnet-n3-c0.1-v5"
+save.image("avnnet-n3-c0.1-v5.RData")
 
 avnnetn3c001 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -104,6 +108,7 @@ avnnetn3c001 <- cruzadaavnnetbin(
 )
 
 avnnetn3c001$modelo = "avnnet-n3-c0.01-v5"
+save.image("avnnet-n3-c0.01-v5.RData")
 
 avnnetn4c01 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -119,6 +124,7 @@ avnnetn4c01 <- cruzadaavnnetbin(
 )
 
 avnnetn4c01$modelo = "avnnet-n4-c0.1-v5"
+save.image("avnnet-n4-c0.1-v5.RData")
 
 avnnetn4c001 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -134,6 +140,7 @@ avnnetn4c001 <- cruzadaavnnetbin(
 )
 
 avnnetn4c001$modelo = "avnnet-n4-c0.01-v5"
+save.image("avnnet-n4-c0.01-v5.RData")
 
 avnnetn5c01 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -149,6 +156,7 @@ avnnetn5c01 <- cruzadaavnnetbin(
 )
 
 avnnetn5c01$modelo = "avnnet-n5-c0.1-v5"
+save.image("avnnet-n5-c0.1-v5.RData")
 
 avnnetn5c001 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -164,6 +172,7 @@ avnnetn5c001 <- cruzadaavnnetbin(
 )
 
 avnnetn5c001$modelo = "avnnet-n5-c0.01-v5"
+save.image("avnnet-n5-c0.01-v5.RData")
 
 avnnetn6c01 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -179,6 +188,7 @@ avnnetn6c01 <- cruzadaavnnetbin(
 )
 
 avnnetn6c01$modelo = "avnnet-n6-c0.1-v5"
+save.image("avnnet-n6-c0.1-v5.RData")
 
 avnnetn6c001 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -194,6 +204,7 @@ avnnetn6c001 <- cruzadaavnnetbin(
 )
 
 avnnetn6c001$modelo = "avnnet-n6-c0.01-v5"
+save.image("avnnet-n6-c0.01-v5.RData")
 
 avnnetn7c01 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -209,6 +220,7 @@ avnnetn7c01 <- cruzadaavnnetbin(
 )
 
 avnnetn7c01$modelo = "avnnet-n7-c0.1-v5"
+save.image("avnnet-n7-c0.1-v5.RData")
 
 avnnetn7c001 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -224,6 +236,7 @@ avnnetn7c001 <- cruzadaavnnetbin(
 )
 
 avnnetn7c001$modelo = "avnnet-n7-c0.01-v5"
+save.image("avnnet-n7-c0.01-v5.RData")
 
 avnnetn8c01 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -239,6 +252,7 @@ avnnetn8c01 <- cruzadaavnnetbin(
 )
 
 avnnetn8c01$modelo = "avnnet-n8-c0.1-v5"
+save.image("avnnet-n8-c0.1-v5.RData")
 
 avnnetn8c001 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -254,6 +268,7 @@ avnnetn8c001 <- cruzadaavnnetbin(
 )
 
 avnnetn8c001$modelo = "avnnet-n8-c0.01-v5"
+save.image("avnnet-n8-c0.01-v5.RData")
 
 avnnetn9c01 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -269,6 +284,7 @@ avnnetn9c01 <- cruzadaavnnetbin(
 )
 
 avnnetn9c01$modelo = "avnnet-n9-c0.1-v5"
+save.image("avnnet-n9-c0.1-v5.RData")
 
 avnnetn9c001 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -284,6 +300,7 @@ avnnetn9c001 <- cruzadaavnnetbin(
 )
 
 avnnetn9c001$modelo = "avnnet-n9-c0.01-v5"
+save.image("avnnet-n9-c0.01-v5.RData")
 
 avnnetn10c01 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -299,6 +316,7 @@ avnnetn10c01 <- cruzadaavnnetbin(
 )
 
 avnnetn10c01$modelo = "avnnet-n10-c0.1-v5"
+save.image("avnnet-n10-c0.1-v5.RData")
 
 avnnetn10c001 <- cruzadaavnnetbin(
   data = news_reduced_clean_five_methods,
@@ -314,6 +332,7 @@ avnnetn10c001 <- cruzadaavnnetbin(
 )
 
 avnnetn10c001$modelo = "avnnet-n10-c0.01-v5"
+save.image("avnnet-n10-c0.01-v5.RData")
 
 arbol <- cruzadaarbolbin(
   data = news_reduced_clean_five_methods,
@@ -327,6 +346,7 @@ arbol <- cruzadaarbolbin(
 )
 
 arbol$modelo = "arbol-v5"
+save.image("arbol-v5.RData")
 
 bagging <- cruzadarfbin(
   data = news_reduced_clean_five_methods,
@@ -342,6 +362,7 @@ bagging <- cruzadarfbin(
 )
 
 bagging$modelo = "bagging-v5"
+save.image("bagging-v5.RData")
 
 randomforest <- cruzadarfbin(
   data = news_reduced_clean_five_methods,
@@ -357,6 +378,7 @@ randomforest <- cruzadarfbin(
 )
 
 randomforest$modelo = "rf-v5"
+save.image("rf-v5.RData")
 
 randomforestm2 <- cruzadarfbin(
   data = news_reduced_clean_five_methods,
@@ -372,6 +394,7 @@ randomforestm2 <- cruzadarfbin(
 )
 
 randomforestm2$modelo = "rf-m2-v5"
+save.image("rf-m2-v5.RData")
 
 gradientboosting <- cruzadagbmbin(
   data = news_reduced_clean_five_methods,
@@ -387,6 +410,7 @@ gradientboosting <- cruzadagbmbin(
 )
 
 gradientboosting$modelo = "gbm-v5"
+save.image("gbm-v5.RData")
 
 
 gradientboosting01d4 <- cruzadagbmbin(
@@ -403,6 +427,7 @@ gradientboosting01d4 <- cruzadagbmbin(
 )
 
 gradientboosting01d4$modelo = "gbm-01-d4-v5"
+save.image("gbm-01-d4-v5.RData")
 
 gradientboosting003d4 <- cruzadagbmbin(
   data = news_reduced_clean_five_methods,
@@ -418,6 +443,7 @@ gradientboosting003d4 <- cruzadagbmbin(
 )
 
 gradientboosting003d4$modelo = "gbm-003-d4-v5"
+save.image("gbm-003-d4-v5.RData")
 
 xgboost <- cruzadaxgbmbin(
   data = news_reduced_clean_five_methods,
@@ -439,6 +465,7 @@ xgboost <- cruzadaxgbmbin(
 )
 
 xgboost$modelo = "xgbm-v5"
+save.image("xgbm-v5.RData")
 
 union <-
   rbind(
