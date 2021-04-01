@@ -15,7 +15,7 @@ source("../cruzada xgboost binaria.R")
 source("../cruzada arbolbin.R")
 
 news_reduced_clean_five_methods <-
-  read.sas7bdat("C:\\Users\\secci\\Workspace\\TFM\\Lib\\news_reduced_clean_five_methods.sas7bdat")
+  read.sas7bdat("../../Lib/news_reduced_clean_five_methods.sas7bdat")
 
 news_reduced_clean_five_methods$REP_clicked <- factor(news_reduced_clean_five_methods$REP_clicked, levels = c(0, 1), labels = c("No", "Yes"))
 
