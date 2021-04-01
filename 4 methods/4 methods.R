@@ -19,14 +19,14 @@ news_reduced_clean_four_methods <-
 
 news_reduced_clean_four_methods$REP_clicked <- factor(news_reduced_clean_four_methods$REP_clicked, levels = c(0, 1), labels = c("No", "Yes"))
 
-news_reduced_clean_four_methods$P1343_tail <- factor(news_reduced_clean_four_methods$P1343_tail)
-news_reduced_clean_four_methods$P17_tail <- factor(news_reduced_clean_four_methods$P17_tail)
-news_reduced_clean_four_methods$P27_tail <- factor(news_reduced_clean_four_methods$P27_tail)
-news_reduced_clean_four_methods$P31_head <- factor(news_reduced_clean_four_methods$P31_head)
-news_reduced_clean_four_methods$P31_tail <- factor(news_reduced_clean_four_methods$P31_tail)
-news_reduced_clean_four_methods$P361_tail <- factor(news_reduced_clean_four_methods$P361_tail)
-news_reduced_clean_four_methods$category <- factor(news_reduced_clean_four_methods$category)
-news_reduced_clean_four_methods$subcategory <- factor(news_reduced_clean_four_methods$subcategory)
+news_reduced_clean_four_methods$REP_P1343_tail <- factor(news_reduced_clean_four_methods$REP_P1343_tail)
+news_reduced_clean_four_methods$REP_P17_tail <- factor(news_reduced_clean_four_methods$REP_P17_tail)
+news_reduced_clean_four_methods$REP_P27_tail <- factor(news_reduced_clean_four_methods$REP_P27_tail)
+news_reduced_clean_four_methods$REP_P31_head <- factor(news_reduced_clean_four_methods$REP_P31_head)
+news_reduced_clean_four_methods$REP_P31_tail <- factor(news_reduced_clean_four_methods$REP_P31_tail)
+news_reduced_clean_four_methods$REP_P361_tail <- factor(news_reduced_clean_four_methods$REP_P361_tail)
+news_reduced_clean_four_methods$REP_category <- factor(news_reduced_clean_four_methods$REP_category)
+news_reduced_clean_four_methods$REP_subcategory <- factor(news_reduced_clean_four_methods$REP_subcategory)
 
 vardep <- c("REP_clicked")
 categoricas <- c(
