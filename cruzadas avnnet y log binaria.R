@@ -104,7 +104,8 @@ cruzadaavnnetbin <- function(data = data,
     maxit = itera,
     repeats = repeticiones,
     trControl = control,
-    tuneGrid = avnnetgrid
+    tuneGrid = avnnetgrid,
+    MaxNWts = 10000000
   )
   
   print(avnnet$results)
